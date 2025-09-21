@@ -32,6 +32,7 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     console.log("user disconnected:", name)
+    delete gameState.players[name]
   })
 })
 

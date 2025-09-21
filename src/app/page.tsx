@@ -20,7 +20,7 @@ export default function Game() {
 
   useEffect(() => {
     const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io(
-      "http://localhost:3001/?name=" + name
+      process.env.NEXT_PUBLIC_WSS_URL + "/?name=" + name
     )
 
     socket.on("connect", () => {
